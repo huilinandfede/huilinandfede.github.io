@@ -1,7 +1,7 @@
 // Language Switcher
 document.getElementById('language-switcher').addEventListener('change', function() {
     const lang = this.value;
-    document.querySelectorAll('[data-en][data-es]').forEach(element => {
+    document.querySelectorAll('[data-en][data-es][data-de]').forEach(element => {
         element.textContent = element.getAttribute(`data-${lang}`);
     });
     // Update page title
