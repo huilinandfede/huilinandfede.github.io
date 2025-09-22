@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acoustic Duo - Cover Band</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Acoustic Duo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gigs">Gigs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-center text-white d-flex align-items-center">
+        <div class="container">
+            <h1>Welcome to Acoustic Duo</h1>
+            <p>Bringing your favorite songs to life with our acoustic covers!</p>
+            <a href="#videos" class="btn btn-primary">Watch Our Covers</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">About Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Meet the Duo</h3>
+                    <p>We are [Band Member 1] and [Band Member 2], a passionate acoustic cover band based in [Your City]. With our guitars and harmonies, we reinterpret your favorite songs from various genres, delivering soulful performances for any occasion.</p>
+                    <p>From cozy café gigs to private events, we love connecting with audiences through music. Check out our videos and book us for your next event!</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="band-photo.jpg" alt="Acoustic Duo" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Covers</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4>Cover Song 1</h4>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Cover Song 1" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h4>Cover Song 2</h4>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Cover Song 2" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank" class="btn btn-outline-dark">More on YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gigs Section -->
+    <section id="gigs" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Upcoming Gigs</h2>
+            <ul class="list-group">
+                <li class="list-group-item">October 10, 2025 - [Venue Name], [City] @ 8:00 PM</li>
+                <li class="list-group-item">November 5, 2025 - [Venue Name], [City] @ 7:00 PM</li>
+                <li class="list-group-item">More dates coming soon!</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Get in Touch</h2>
+            <form id="contact-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2025 Acoustic Duo. Follow us on:
+                <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank" class="text-white">YouTube</a> |
+                <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" class="text-white">Instagram</a> |
+                <a href="https://x.com/YOUR_X_HANDLE" target="_blank" class="text-white">X</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
