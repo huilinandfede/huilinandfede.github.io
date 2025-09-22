@@ -1,0 +1,35 @@
+/* Custom styles for the website */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+section {
+    padding: 60px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Smooth scrolling for nav links */
+html {
+    scroll-behavior: smooth;
+}
