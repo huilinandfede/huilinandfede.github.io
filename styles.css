@@ -4,23 +4,6 @@ body {
     padding-top: 70px; /* Add padding to prevent content from being hidden under fixed navbar */
 }
 
-.hero {
-    background-image: url('hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    color: white;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-}
-
-.hero p {
-    font-size: 1.5rem;
-}
-
 section {
     padding: 60px 0;
 }
