@@ -112,27 +112,55 @@ p {
     color: white !important;
 }
 
-/* Language Switcher */
-#language-switcher {
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--border-radius);
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+/* Language Switcher Dropdown */
+#languageDropdown {
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: var(--border-radius) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
     font-size: 0.9rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem !important;
     transition: var(--transition);
 }
 
-#language-switcher:focus {
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
+#languageDropdown:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    color: white !important;
+    box-shadow: none !important;
 }
 
-#language-switcher option {
-    background: var(--primary-color);
-    color: white;
+#languageDropdown:focus {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+    outline: none !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+#languageDropdown:active {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    color: white !important;
+}
+
+/* Language Dropdown Menu */
+.dropdown-menu {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+}
+
+.dropdown-menu .dropdown-item {
+    color: white !important;
+    padding: 0.75rem 1rem;
+    transition: var(--transition);
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
 }
 
 /* Sections */

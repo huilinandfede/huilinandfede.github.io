@@ -1,23 +1,36 @@
 // Language Switcher
-document.getElementById('language-switcher').addEventListener('change', function() {
-    const lang = this.value;
+function switchLanguage(lang) {
+    // Update all text elements
     document.querySelectorAll('[data-en][data-es][data-de]').forEach(element => {
         element.textContent = element.getAttribute(`data-${lang}`);
     });
+    
     // Update page title
     document.title = document.querySelector('title').getAttribute(`data-${lang}`);
-});
+    
+    // Update the dropdown button display
+    const button = document.getElementById('languageDropdown');
+    const flagClasses = {
+        'en': 'fi fi-us',
+        'es': 'fi fi-es', 
+        'de': 'fi fi-de'
+    };
+    const langNames = {
+        'en': 'EN',
+        'es': 'ES',
+        'de': 'DE'
+    };
+    
+    button.innerHTML = `<span class="${flagClasses[lang]}"></span> ${langNames[lang]}`;
+    
+    // Save language preference
+    localStorage.setItem('language', lang);
+}
 
-// Persist the Language choice
-document.getElementById('language-switcher').value = localStorage.getItem('language') || 'en';
-document.getElementById('language-switcher').dispatchEvent(new Event('change'));
-document.getElementById('language-switcher').addEventListener('change', function() {
-    localStorage.setItem('language', this.value);
-    const lang = this.value;
-    document.querySelectorAll('[data-en][data-es][data-de]').forEach(element => {
-        element.textContent = element.getAttribute(`data-${lang}`);
-    });
-    document.title = document.querySelector('title').getAttribute(`data-${lang}`);
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('language') || 'en';
+    switchLanguage(savedLang);
 });
 
 // Simple Carousel Navigation (working version from commit 0acbf880b042da87b28b4a03e9969657f6acbd04)
