@@ -11,7 +11,7 @@ function switchLanguage(lang) {
     // Update the dropdown button display
     const button = document.getElementById('languageDropdown');
     const flagClasses = {
-        'en': 'fi fi-us',
+        'en': 'fi fi-gb',
         'es': 'fi fi-es', 
         'de': 'fi fi-de'
     };

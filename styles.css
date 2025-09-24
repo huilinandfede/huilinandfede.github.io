@@ -163,6 +163,34 @@ p {
     color: white !important;
 }
 
+/* Mobile Dropdown Positioning Fix */
+@media (max-width: 767px) {
+    .navbar .dropdown {
+        position: relative !important;
+    }
+    
+    .navbar .dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        left: auto !important;
+        transform: none !important;
+        margin-top: -40px !important;
+        margin-right: 40px !important;
+        min-width: 160px;
+        border-radius: var(--border-radius) !important;
+    }
+    
+    .navbar .dropdown-menu.show {
+        display: block;
+        transform: none !important;
+    }
+    
+    .navbar .dropdown-toggle::after {
+        margin-left: 0.5em !important;
+    }
+}
+
 /* Sections */
 section {
     padding: 5rem 0;
