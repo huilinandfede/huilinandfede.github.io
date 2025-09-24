@@ -72,6 +72,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Touch/Swipe functionality
+    let startX = 0;
+    let startY = 0;
+    let isScrolling = false;
+    
+    carousel.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isScrolling = false;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchmove', function(e) {
+        if (!startX || !startY) return;
+        
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        const diffX = startX - currentX;
+        const diffY = startY - currentY;
+        
+        // Determine if this is vertical or horizontal scrolling
+        if (!isScrolling) {
+            isScrolling = Math.abs(diffY) > Math.abs(diffX);
+        }
+        
+        // If vertical scrolling, allow it
+        if (isScrolling) return;
+        
+        // If horizontal swipe, prevent default
+        e.preventDefault();
+    }, { passive: false });
+    
+    carousel.addEventListener('touchend', function(e) {
+        if (!startX || !startY || isScrolling) {
+            startX = 0;
+            startY = 0;
+            return;
+        }
+        
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        const threshold = 50; // Minimum swipe distance
+        
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0) {
+                // Swiped left, go to next slide
+                nextSlide();
+            } else {
+                // Swiped right, go to previous slide
+                prevSlide();
+            }
+        }
+        
+        startX = 0;
+        startY = 0;
+    }, { passive: true });
+
     // Handle window resize
     window.addEventListener('resize', function() {
         const maxIndex = window.innerWidth >= 768 ? 2 : 5;
