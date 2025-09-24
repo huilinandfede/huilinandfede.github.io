@@ -46,11 +46,11 @@ html {
 }
 
 .carousel-control-prev {
-    left: -15px;
+    left: 10px;
 }
 
 .carousel-control-next {
-    right: -15px;
+    right: 10px;
 }
 
 .carousel-control-prev-icon,
@@ -96,11 +96,11 @@ html {
     }
     
     .carousel-control-prev {
-        left: -10px;
+        left: 5px;
     }
     
     .carousel-control-next {
-        right: -10px;
+        right: 5px;
     }
     
     .carousel-indicators {
@@ -111,6 +111,20 @@ html {
         font-size: 1rem;
         margin-bottom: 0.5rem !important;
     }
+}
+
+/* Enhanced touch area for carousel */
+.carousel {
+    touch-action: pan-y pinch-zoom;
+}
+
+.carousel-inner {
+    touch-action: pan-y pinch-zoom;
+}
+
+/* Make entire video section swipeable */
+#videos .container {
+    position: relative;
 }
 
 /* Additional overflow protection */
