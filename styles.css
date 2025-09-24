@@ -21,18 +21,26 @@ html {
 }
 
 /* Video Carousel Styling */
+.custom-carousel {
+    position: relative;
+}
+
 .carousel-inner {
     overflow: hidden;
+    position: relative;
 }
 
 .carousel-item {
-    transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     min-height: 300px;
     opacity: 0;
+    display: none;
+    width: 100%;
 }
 
 .carousel-item.active {
     opacity: 1;
+    display: block;
 }
 
 .carousel-control-prev,

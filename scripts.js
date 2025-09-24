@@ -37,8 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Function to get all carousel items
-        // Disable Bootstrap's default carousel behavior and handle manually
+        // Custom carousel implementation
         let isTransitioning = false;
+        
+        // Disable any Bootstrap carousel initialization
+        if (carousel.classList.contains('carousel')) {
+            carousel.classList.remove('carousel', 'slide');
+        }
+        carousel.classList.add('custom-carousel');
         
         function getCarouselItems() {
             return carousel.querySelectorAll('.carousel-item');
@@ -46,73 +52,133 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Function to get visible slides based on screen size
         function getVisibleSlides() {
-            const items = getCarouselItems();
+            const items = Array.from(getCarouselItems());
             if (isDesktop()) {
-                // On desktop, only slides 0, 1, 2 are visible
-                return Array.from(items).slice(0, 3);
+                // On desktop, only first 3 slides are visible (slides 3,4,5 are hidden with d-md-none)
+                return items.filter((item, index) => {
+                    return index < 3 || !item.classList.contains('d-md-none');
+                });
             } else {
-                // On mobile, all 6 slides are potentially visible
-                return Array.from(items);
+                // On mobile, all 6 slides are visible
+                return items;
             }
         }
         
-        // Function to navigate to a specific slide with smooth transition
+        // Function to navigate to a specific slide
         function goToSlide(slideIndex) {
-            if (isTransitioning) return;
+            if (isTransitioning) {
+                console.log('Transition in progress, ignoring navigation');
+                return;
+            }
             
             const visibleSlides = getVisibleSlides();
-            const items = getCarouselItems();
+            console.log(`Attempting to go to slide ${slideIndex} of ${visibleSlides.length} visible slides`);
             
-            if (slideIndex >= 0 && slideIndex < visibleSlides.length) {
-                isTransitioning = true;
-                
-                // Remove active class from all items
-                items.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Add active class to target slide with a small delay for smooth transition
-                setTimeout(() => {
-                    if (visibleSlides[slideIndex]) {
-                        visibleSlides[slideIndex].classList.add('active');
-                        currentSlide = slideIndex;
-                    }
-                    
-                    // Reset transition flag after animation completes
-                    setTimeout(() => {
-                        isTransitioning = false;
-                    }, 600); // Match CSS transition duration
-                }, 50);
+            if (slideIndex < 0 || slideIndex >= visibleSlides.length) {
+                console.error(`Invalid slide index: ${slideIndex}, valid range: 0-${visibleSlides.length - 1}`);
+                return;
             }
+            
+            isTransitioning = true;
+            const allItems = getCarouselItems();
+            const targetSlide = visibleSlides[slideIndex];
+            
+            // Hide all slides
+            allItems.forEach((item, i) => {
+                item.classList.remove('active');
+                console.log(`Removed active from slide ${i}`);
+            });
+            
+            // Show target slide
+            targetSlide.classList.add('active');
+            currentSlide = slideIndex;
+            
+            console.log(`Set slide ${slideIndex} as active, currentSlide updated to ${currentSlide}`);
+            
+            // Update indicators
+            updateIndicators(slideIndex);
+            
+            // Reset transition flag
+            setTimeout(() => {
+                isTransitioning = false;
+                console.log('Transition completed');
+            }, 600); // Wait for CSS transition
+        }
+        
+        // Function to update carousel indicators
+        function updateIndicators(slideIndex) {
+            const indicators = carousel.querySelectorAll('.carousel-indicators button');
+            const visibleSlides = getVisibleSlides();
+            
+            console.log(`Updating indicators for slide ${slideIndex}`);
+            
+            indicators.forEach((indicator, index) => {
+                if (index < visibleSlides.length) {
+                    indicator.classList.toggle('active', index === slideIndex);
+                    indicator.style.display = 'inline-block';
+                } else {
+                    indicator.classList.remove('active');
+                    indicator.style.display = 'none';
+                }
+            });
         }
         
         // Function to navigate carousel with proper boundary handling
         function navigateCarousel(direction) {
-            if (isTransitioning) return;
+            if (isTransitioning) {
+                console.log('Navigation blocked - transition in progress');
+                return;
+            }
             
             const visibleSlides = getVisibleSlides();
             const maxSlideIndex = visibleSlides.length - 1;
             
+            console.log(`Current slide: ${currentSlide}, Direction: ${direction}, Max slide index: ${maxSlideIndex}`);
+            
+            let nextSlideIndex;
             if (direction === 'next') {
-                const nextSlide = currentSlide >= maxSlideIndex ? 0 : currentSlide + 1;
-                goToSlide(nextSlide);
+                nextSlideIndex = currentSlide >= maxSlideIndex ? 0 : currentSlide + 1;
             } else {
-                const prevSlide = currentSlide <= 0 ? maxSlideIndex : currentSlide - 1;
-                goToSlide(prevSlide);
+                nextSlideIndex = currentSlide <= 0 ? maxSlideIndex : currentSlide - 1;
             }
+            
+            console.log(`Navigating from slide ${currentSlide} to slide ${nextSlideIndex}`);
+            goToSlide(nextSlideIndex);
         }
         
         // Initialize current slide
         function initCurrentSlide() {
-            const items = getCarouselItems();
-            const activeSlide = Array.from(items).findIndex(item => item.classList.contains('active'));
-            currentSlide = Math.max(0, activeSlide);
-            
-            // Ensure we're on a valid slide for current screen size
+            const allItems = getCarouselItems();
             const visibleSlides = getVisibleSlides();
-            if (currentSlide >= visibleSlides.length) {
-                goToSlide(0);
+            
+            console.log(`Initializing carousel - Total items: ${allItems.length}, Visible slides: ${visibleSlides.length}`);
+            console.log(`Desktop mode: ${isDesktop()}`);
+            
+            // Find currently active slide among visible slides
+            let activeIndex = -1;
+            visibleSlides.forEach((slide, index) => {
+                if (slide.classList.contains('active')) {
+                    activeIndex = index;
+                }
+            });
+            
+            // If no active slide found or active slide is not visible, set first visible slide as active
+            if (activeIndex === -1) {
+                console.log('No active visible slide found, setting first visible slide as active');
+                activeIndex = 0;
+                
+                // Remove active from all slides
+                allItems.forEach(item => item.classList.remove('active'));
+                
+                // Set first visible slide as active
+                if (visibleSlides[0]) {
+                    visibleSlides[0].classList.add('active');
+                }
             }
+            
+            currentSlide = activeIndex;
+            updateIndicators(currentSlide);
+            console.log(`Carousel initialized with slide ${currentSlide} active`);
         }
         
         // Initialize on load
