@@ -2,6 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     padding-top: 70px; /* Add padding to prevent content from being hidden under fixed navbar */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 section {
@@ -16,6 +17,7 @@ img {
 /* Smooth scrolling for nav links */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Video Carousel Styling */
@@ -44,11 +46,11 @@ html {
 }
 
 .carousel-control-prev {
-    left: -30px;
+    left: -15px;
 }
 
 .carousel-control-next {
-    right: -30px;
+    right: -15px;
 }
 
 .carousel-control-prev-icon,
@@ -94,11 +96,11 @@ html {
     }
     
     .carousel-control-prev {
-        left: -25px;
+        left: -10px;
     }
     
     .carousel-control-next {
-        right: -25px;
+        right: -10px;
     }
     
     .carousel-indicators {
@@ -109,4 +111,18 @@ html {
         font-size: 1rem;
         margin-bottom: 0.5rem !important;
     }
+}
+
+/* Additional overflow protection */
+.container-fluid {
+    overflow-x: hidden;
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
