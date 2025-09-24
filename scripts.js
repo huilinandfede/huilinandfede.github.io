@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Function to get all carousel items
+        // Disable Bootstrap's default carousel behavior and handle manually
+        let isTransitioning = false;
+        
         function getCarouselItems() {
             return carousel.querySelectorAll('.carousel-item');
         }
@@ -53,23 +56,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Function to navigate to a specific slide
+        // Function to navigate to a specific slide with smooth transition
         function goToSlide(slideIndex) {
+            if (isTransitioning) return;
+            
             const visibleSlides = getVisibleSlides();
             const items = getCarouselItems();
             
-            // Remove active class from all items
-            items.forEach(item => item.classList.remove('active'));
-            
-            // Add active class to target slide
-            if (visibleSlides[slideIndex]) {
-                visibleSlides[slideIndex].classList.add('active');
-                currentSlide = slideIndex;
+            if (slideIndex >= 0 && slideIndex < visibleSlides.length) {
+                isTransitioning = true;
+                
+                // Remove active class from all items
+                items.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Add active class to target slide with a small delay for smooth transition
+                setTimeout(() => {
+                    if (visibleSlides[slideIndex]) {
+                        visibleSlides[slideIndex].classList.add('active');
+                        currentSlide = slideIndex;
+                    }
+                    
+                    // Reset transition flag after animation completes
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 600); // Match CSS transition duration
+                }, 50);
             }
         }
         
         // Function to navigate carousel with proper boundary handling
         function navigateCarousel(direction) {
+            if (isTransitioning) return;
+            
             const visibleSlides = getVisibleSlides();
             const maxSlideIndex = visibleSlides.length - 1;
             
