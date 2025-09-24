@@ -430,11 +430,20 @@ section:nth-child(even) {
     transform: scale(1.3);
 }
 
-/* About Section */
+/* Performance Optimizations */
+iframe {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    will-change: transform; /* Optimize for animations */
+}
+
+/* Preload critical resources */
 .about-image {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-medium);
     transition: var(--transition);
+    will-change: transform;
+    content-visibility: auto; /* Browser optimization */
 }
 
 .about-image:hover {
