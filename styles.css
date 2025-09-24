@@ -158,13 +158,13 @@ section:nth-child(even) {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, var(--secondary-color), #5dade2);
+    background: linear-gradient(45deg, #667eea, #764ba2);
     color: white;
     box-shadow: var(--shadow-light);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+    background: linear-gradient(45deg, #5a6fd8, #6b4190);
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
     color: white;
