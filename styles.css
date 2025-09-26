@@ -112,6 +112,17 @@ p {
     color: white !important;
 }
 
+/* Navbar Social Icons */
+.navbar-social-icons a {
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.navbar-social-icons a:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+    transform: translateY(-2px);
+}
+
 /* Language Switcher Dropdown */
 #languageDropdown {
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
@@ -188,6 +199,10 @@ p {
     
     .navbar .dropdown-toggle::after {
         margin-left: 0.5em !important;
+    }
+
+    .navbar-social-icons a {
+        padding-left: 1rem;
     }
 }
 
