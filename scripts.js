@@ -25,6 +25,15 @@ function switchLanguage(lang) {
     
     // Save language preference
     localStorage.setItem('language', lang);
+    
+    // Close the navbar dropdown if it's open (mobile view)
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+        bsCollapse.hide();
+    }
 }
 
 // Initialize language on page load
@@ -152,4 +161,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize
     showSlide(currentIndex);
+});
+
+// Close navbar dropdown when clicking on nav links
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.getElementById('navbarNav');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Check if navbar is currently expanded (mobile view)
+            if (navbarCollapse.classList.contains('show')) {
+                // Close the dropdown
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+        });
+    });
 });
