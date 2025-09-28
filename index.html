@@ -262,6 +262,26 @@
         <div class="container">
             <br><br>
             <h2 class="text-center mb-4" data-en="Get in Touch" data-es="Contáctanos" data-de="Kontakt Aufnehmen">Get in Touch</h2>
+            
+            <!-- Contact Info -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 text-center">
+                    <p class="lead" data-en="Ready to book us for your event? Get in touch!" data-es="¿Listo para contratarnos para tu evento? ¡Ponte en contacto!" data-de="Bereit uns für Ihr Event zu buchen? Kontaktieren Sie uns!">Ready to book us for your event? Get in touch!</p>
+                    <div class="contact-email mb-4">
+                        <h5 class="mb-2" data-en="Email us directly or message us on Instagram:" data-es="Envíanos un email directamente o escríbenos en Instagram:" data-de="Schreib uns direkt eine E-Mail oder kontaktiere uns auf Instagram:">Email us directly or message us on Instagram:</h5>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                            <a href="mailto:huilinandfede@gmail.com" class="btn btn-outline-primary btn-lg">
+                                <i class="bi bi-envelope me-2"></i>huilinandfede@gmail.com
+                            </a>
+                            <a href="https://instagram.com/huilinandfede" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-lg">
+                                <i class="bi bi-instagram me-2"></i>@huilinandfede
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-muted" data-en="Or use the contact form below:" data-es="O usa el formulario de contacto:" data-de="Oder nutzen Sie das Kontaktformular:">Or use the contact form below:</p>
+                </div>
+            </div>
+
             <br>
             <form id="contact-form" action="https://formspree.io/f/xqaykaao" method="POST">
                 <div class="mb-3">
@@ -287,10 +307,10 @@
                     <p class="text-muted small mb-0">
                         <i class="bi bi-shield-lock me-2"></i>
                         <strong data-en="Privacy Notice:" data-es="Aviso de Privacidad:" data-de="Datenschutzhinweis:">Privacy Notice:</strong>
-                        <span data-en="We only use your contact information to respond to your inquiry. We do not share your data with third parties or use it for marketing purposes. Your information is kept secure and will be deleted upon request." 
-                              data-es="Solo utilizamos su información de contacto para responder a su consulta. No compartimos sus datos con terceros ni los usamos con fines de marketing. Su información se mantiene segura y será eliminada si lo solicita."
-                              data-de="Wir verwenden Ihre Kontaktdaten nur zur Beantwortung Ihrer Anfrage. Wir teilen Ihre Daten nicht mit Dritten und verwenden sie nicht für Marketingzwecke. Ihre Informationen werden sicher aufbewahrt und auf Anfrage gelöscht.">
-                            We only use your contact information to respond to your inquiry. We do not share your data with third parties or use it for marketing purposes. Your information is kept secure and will be deleted upon request.
+                        <span data-en="Your message is sent directly to us via Formspree. We keep emails for up to 2 years to respond to inquiries and manage bookings. We do not use your information for marketing or share it with third parties." 
+                              data-es="Su mensaje se envía directamente a nosotros a través de Formspree. Guardamos los correos electrónicos hasta 2 años para responder consultas y gestionar reservas. No usamos su información para marketing ni la compartimos con terceros."
+                              data-de="Ihre Nachricht wird direkt über Formspree an uns gesendet. Wir bewahren E-Mails bis zu 2 Jahre auf, um Anfragen zu beantworten und Buchungen zu verwalten. Wir verwenden Ihre Daten nicht für Marketing oder teilen sie mit Dritten.">
+                            Your message is sent directly to us via Formspree. We keep emails for up to 2 years to respond to inquiries and manage bookings. We do not use your information for marketing or share it with third parties.
                         </span>
                     </p>
                 </div>
@@ -298,19 +318,80 @@
         </div>
     </section>
 
+    <!-- Impressum Modal -->
+    <div class="modal fade" id="impressumModal" tabindex="-1" aria-labelledby="impressumModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="impressumModalLabel" data-en="Legal Notice (Impressum)" data-es="Aviso Legal (Impressum)" data-de="Impressum">Legal Notice (Impressum)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 data-en="Information according to § 5 TMG" data-es="Información según § 5 TMG" data-de="Angaben gemäß § 5 TMG">Angaben gemäß § 5 TMG</h6>
+                    <p><strong data-en="Responsible for content:" data-es="Responsable del contenido:" data-de="Verantwortlich für den Inhalt:">Verantwortlich für den Inhalt:</strong><br>
+                    <span data-en="Hui Lin & Fede - Frankfurt am Main, 65929, Germany" data-es="Hui Lin & Fede - Frankfurt am Main, 65929, Alemania" data-de="Hui Lin & Fede - Frankfurt am Main, 65929, Deutschland">Hui Lin & Fede - Frankfurt am Main, 65929, Germany</span></p>
+                    
+                    <h6 data-en="Contact" data-es="Contacto" data-de="Kontakt">Kontakt</h6>
+                    <p><strong data-en="Email:" data-es="Correo:" data-de="E-Mail:">E-Mail:</strong> <span data-en="huilinandfede@gmail.com" data-es="huilinandfede@gmail.com" data-de="huilinandfede@gmail.com">huilinandfede@gmail.com</span><br>
+
+                    <h6 data-en="Disclaimer" data-es="Descargo de responsabilidad" data-de="Haftungsausschluss">Haftungsausschluss</h6>
+                    <p data-en="The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents' accuracy, completeness or topicality." data-es="Los contenidos de nuestras páginas han sido creados con el máximo cuidado. Sin embargo, no podemos garantizar la exactitud, integridad o actualidad de los contenidos." data-de="Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.">Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel" data-en="Privacy Policy" data-es="Política de Privacidad" data-de="Datenschutzerklärung">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 data-en="Data Controller" data-es="Responsable de los Datos" data-de="Verantwortlicher">Verantwortlicher</h6>
+                    <p data-en="The data controller for this website is Hui Lin & Fede (see contact details in Legal Notice)." data-es="El responsable de los datos de este sitio web es Hui Lin & Fede (ver detalles de contacto en el Aviso Legal)." data-de="Verantwortlicher für diese Website ist Hui Lin & Fede (siehe Kontaktdaten im Impressum).">Hui Lin & Fede (siehe Kontaktdaten im Impressum)</p>
+
+                    <h6 data-en="Contact Form" data-es="Formulario de Contacto" data-de="Kontaktformular">Kontaktformular</h6>
+                    <p data-en="When you contact us via our contact form:" data-es="Cuando nos contacta a través de nuestro formulario de contacto:" data-de="Wenn Sie uns über unser Kontaktformular kontaktieren:">Wenn Sie uns über unser Kontaktformular kontaktieren:</p>
+                    <ul>
+                        <li data-en="Your message is sent directly to our email via Formspree" data-es="Su mensaje se envía directamente a nuestro correo electrónico a través de Formspree" data-de="Ihre Nachricht wird direkt über Formspree an unsere E-Mail gesendet">Ihre Nachricht wird direkt über Formspree an unsere E-Mail gesendet</li>
+                        <li data-en="We do not store your data on our website" data-es="No almacenamos sus datos en nuestro sitio web" data-de="Wir speichern Ihre Daten nicht auf unserer Website">Wir speichern Ihre Daten nicht auf unserer Website</li>
+                        <li data-en="We only use your information to respond to your inquiry" data-es="Solo usamos su información para responder a su consulta" data-de="Wir verwenden Ihre Daten nur zur Beantwortung Ihrer Anfrage">Wir verwenden Ihre Daten nur zur Beantwortung Ihrer Anfrage</li>
+                    </ul>
+                    <p data-en="Legal basis: Your consent (Art. 6 para. 1 lit. a GDPR). Third-party service: We use Formspree.io to process contact form submissions. Please refer to Formspree's privacy policy for details on their data handling." data-es="Base legal: Su consentimiento (Art. 6 párr. 1 lit. a RGPD). Servicio de terceros: Utilizamos Formspree.io para procesar los envíos del formulario de contacto. Consulte la política de privacidad de Formspree para obtener detalles sobre su manejo de datos." data-de="Rechtsgrundlage: Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Drittanbieter: Wir nutzen Formspree.io zur Verarbeitung von Kontaktformular-Anfragen. Details zum Umgang mit Daten finden Sie in Formsprees Datenschutzerklärung.">Rechtsgrundlage: Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Drittanbieter: Wir nutzen Formspree.io zur Verarbeitung von Kontaktformular-Anfragen. Details zum Umgang mit Daten finden Sie in Formsprees Datenschutzerklärung.</p>
+
+                    <h6 data-en="Your Rights" data-es="Sus Derechos" data-de="Ihre Rechte">Ihre Rechte</h6>
+                    <p data-en="Since we don't store your personal data, there is no stored data to access, correct, or delete from our side. For inquiries about data handled by Formspree, please contact them directly." data-es="Como no almacenamos sus datos personales, no hay datos almacenados para acceder, corregir o eliminar de nuestro lado. Para consultas sobre datos manejados por Formspree, contáctelos directamente." data-de="Da wir Ihre persönlichen Daten nicht speichern, gibt es keine gespeicherten Daten, auf die wir zugreifen, die wir korrigieren oder löschen könnten. Bei Fragen zu Daten, die von Formspree verarbeitet werden, wenden Sie sich direkt an diese.">Da wir Ihre persönlichen Daten nicht speichern, gibt es keine gespeicherten Daten, auf die wir zugreifen, die wir korrigieren oder löschen könnten. Bei Fragen zu Daten, die von Formspree verarbeitet werden, wenden Sie sich direkt an diese.</p>
+                    
+                    <h6 data-en="External Content" data-es="Contenido Externo" data-de="Externe Inhalte">Externe Inhalte</h6>
+                    <p data-en="Our website includes embedded YouTube videos. When you play these videos, YouTube may collect data. Please refer to YouTube's privacy policy for more information." data-es="Nuestro sitio web incluye videos de YouTube incrustados. Cuando reproduzca estos videos, YouTube puede recopilar datos. Consulte la política de privacidad de YouTube para más información." data-de="Unsere Website enthält eingebettete YouTube-Videos. Beim Abspielen dieser Videos kann YouTube Daten sammeln. Weitere Informationen finden Sie in der Datenschutzerklärung von YouTube.">Unsere Website enthält eingebettete YouTube-Videos. Beim Abspielen dieser Videos kann YouTube Daten sammeln. Weitere Informationen finden Sie in der Datenschutzerklärung von YouTube.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <div class="container">
-            <p data-en="&copy; 2025 Hui Lin & Fede. Follow us on:" data-es="&copy; 2025 Hui Lin & Fede. Síguenos en:" data-de="&copy; 2025 Hui Lin & Fede. Folge uns auf:">&copy; 2025 Hui Lin & Fede. Follow us on:
-                <div class="mt-2">
-                    <a href="https://www.youtube.com/channel/UCzhgotDEyu7kYmb5BpA8g9w" target="_blank" class="text-white me-3">
-                        <i class="bi bi-youtube"></i> YouTube
-                    </a>
-                    <a href="https://www.instagram.com/huilinandfede" target="_blank" class="text-white">
-                        <i class="bi bi-instagram"></i> Instagram
-                    </a>
-                </div>
+            <p>&copy; 2025 Hui Lin & Fede. 
+                <span class="d-block d-md-inline">
+                    <span class="d-block d-md-inline" data-en="Follow us on:" data-es="Síguenos en:" data-de="Folge uns auf:">Follow us on:</span>
+                    <span class="d-block d-md-inline">
+                        <a href="https://www.youtube.com/channel/UCzhgotDEyu7kYmb5BpA8g9w" target="_blank" class="text-white ms-md-2 me-3">
+                            <i class="bi bi-youtube"></i> YouTube
+                        </a>
+                        <a href="https://www.instagram.com/huilinandfede" target="_blank" class="text-white">
+                            <i class="bi bi-instagram"></i> Instagram
+                        </a>
+                    </span>
+                </span>
             </p>
+            <div class="mt-3">
+                <a href="#" class="text-white-50 me-3 small" data-bs-toggle="modal" data-bs-target="#impressumModal" data-en="Legal Notice" data-es="Aviso Legal" data-de="Impressum">Impressum</a>
+                <a href="#" class="text-white-50 small" data-bs-toggle="modal" data-bs-target="#privacyModal" data-en="Privacy Policy" data-es="Política de Privacidad" data-de="Datenschutz">Datenschutz</a>
+            </div>
         </div>
     </footer>
 
