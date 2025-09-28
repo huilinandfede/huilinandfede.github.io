@@ -544,6 +544,24 @@ iframe {
     margin-bottom: 0.5rem;
 }
 
+/* Privacy Notice */
+.privacy-notice {
+    background: rgba(108, 117, 125, 0.1);
+    border: 1px solid rgba(108, 117, 125, 0.2);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.privacy-notice p {
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.privacy-notice i {
+    color: var(--secondary-color);
+}
+
 /* Cards and Content Boxes */
 .content-box {
     background: var(--background-white);

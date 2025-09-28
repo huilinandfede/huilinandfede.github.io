@@ -266,21 +266,34 @@
             <form id="contact-form" action="https://formspree.io/f/xqaykaao" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label" data-en="Name" data-es="Nombre" data-de="Name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="name">
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label" data-en="Phone" data-es="Teléfono" data-de="Telefon">Phone</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                    <input type="tel" class="form-control" id="phone" name="phone">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label" data-en="Email" data-es="Correo Electrónico" data-de="E-Mail">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" id="email" name="email">
                 </div>
                 <div class="mb-3">
                     <label for="message" class="form-label" data-en="Message" data-es="Mensaje" data-de="Nachricht">Message</label>
                     <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" data-en="Send Message" data-es="Enviar Mensaje" data-de="Nachricht senden">Send Message</button>
+                
+                <!-- Privacy Notice -->
+                <div class="privacy-notice mt-3">
+                    <p class="text-muted small mb-0">
+                        <i class="bi bi-shield-lock me-2"></i>
+                        <strong data-en="Privacy Notice:" data-es="Aviso de Privacidad:" data-de="Datenschutzhinweis:">Privacy Notice:</strong>
+                        <span data-en="We only use your contact information to respond to your inquiry. We do not share your data with third parties or use it for marketing purposes. Your information is kept secure and will be deleted upon request." 
+                              data-es="Solo utilizamos su información de contacto para responder a su consulta. No compartimos sus datos con terceros ni los usamos con fines de marketing. Su información se mantiene segura y será eliminada si lo solicita."
+                              data-de="Wir verwenden Ihre Kontaktdaten nur zur Beantwortung Ihrer Anfrage. Wir teilen Ihre Daten nicht mit Dritten und verwenden sie nicht für Marketingzwecke. Ihre Informationen werden sicher aufbewahrt und auf Anfrage gelöscht.">
+                            We only use your contact information to respond to your inquiry. We do not share your data with third parties or use it for marketing purposes. Your information is kept secure and will be deleted upon request.
+                        </span>
+                    </p>
+                </div>
             </form>
         </div>
     </section>
