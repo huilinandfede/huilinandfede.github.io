@@ -182,3 +182,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Back to Top Button functionality
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/hide back to top button based on scroll position
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+});

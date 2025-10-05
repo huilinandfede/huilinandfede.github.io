@@ -722,3 +722,51 @@ iframe {
         padding-right: 1rem;
     }
 }
+
+/* Back to Top Button */
+.btn-back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: var(--shadow-medium);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-back-to-top:hover {
+    background: linear-gradient(45deg, #5a6fd8, #6b4190);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.btn-back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Mobile adjustments for back to top button */
+@media (max-width: 768px) {
+    .btn-back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
