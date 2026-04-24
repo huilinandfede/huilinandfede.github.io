@@ -203,3 +203,69 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Show Home Modal on first visit (unless user opts out)
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const modalEl = document.getElementById('homeModal');
+        if (!modalEl) return;
+
+        const homeModal = new bootstrap.Modal(modalEl, { keyboard: true, backdrop: true });
+        // Show the modal after a short delay so it doesn't clash with other on-load behaviors
+        setTimeout(() => homeModal.show(), 500);
+
+        // Close modal when clicking outside the content card
+        modalEl.addEventListener('click', function (e) {
+            // If the click happened inside the links card, do nothing
+            if (e.target.closest && e.target.closest('.links-card')) return;
+            const bs = bootstrap.Modal.getInstance(modalEl);
+            if (bs) bs.hide();
+        });
+
+    } catch (e) {
+        // Fail silently if anything unexpected occurs
+        console.error('Home modal init error:', e);
+    }
+});
+
+// Add click handler for modal Contact link to close modal and scroll
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const contactLink = document.getElementById('modalContactLink');
+        const aboutLink = document.getElementById('modalAboutLink');
+        const modalEl = document.getElementById('homeModal');
+        if (contactLink && modalEl) {
+            contactLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const bsModal = bootstrap.Modal.getInstance(modalEl);
+                if (bsModal) bsModal.hide();
+                setTimeout(() => {
+                    const contactEl = document.getElementById('contact');
+                    if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
+                }, 250);
+            });
+        }
+        if (aboutLink && modalEl) {
+            aboutLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const bsModal = bootstrap.Modal.getInstance(modalEl);
+                if (bsModal) bsModal.hide();
+                setTimeout(() => {
+                    const aboutEl = document.getElementById('about');
+                    if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth' });
+                }, 250);
+            });
+        }
+        // Open modal when clicking the navbar brand (home icon)
+        const homeBrand = document.getElementById('homeBrand');
+        if (homeBrand && modalEl) {
+            homeBrand.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl, { keyboard: true, backdrop: true });
+                modalInstance.show();
+            });
+        }
+    } catch (e) {
+        console.error('Modal contact handler error:', e);
+    }
+});
